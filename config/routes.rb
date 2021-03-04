@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :billings
   resources :client_payment_methods
   resources :clients
   resources :payment_methods

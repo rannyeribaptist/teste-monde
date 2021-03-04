@@ -1,4 +1,5 @@
 class Client < ApplicationRecord
+  has_many :billings
   has_one :client_payment_method
 
   validates_presence_of :name, :billing_date

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_04_052819) do
+ActiveRecord::Schema.define(version: 2021_03_04_180148) do
 
   create_table "admins", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -22,6 +22,17 @@ ActiveRecord::Schema.define(version: 2021_03_04_052819) do
     t.datetime "remember_created_at"
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+  end
+
+  create_table "billings", force: :cascade do |t|
+    t.date "accounted_at"
+    t.integer "client_id", null: false
+    t.integer "payment_method_id", null: false
+    t.decimal "value"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["client_id"], name: "index_billings_on_client_id"
+    t.index ["payment_method_id"], name: "index_billings_on_payment_method_id"
   end
 
   create_table "client_payment_methods", force: :cascade do |t|
@@ -48,6 +59,8 @@ ActiveRecord::Schema.define(version: 2021_03_04_052819) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "billings", "clients"
+  add_foreign_key "billings", "payment_methods"
   add_foreign_key "client_payment_methods", "clients"
   add_foreign_key "client_payment_methods", "payment_methods"
 end

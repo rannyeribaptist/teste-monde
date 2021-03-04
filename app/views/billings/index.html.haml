@@ -1,0 +1,25 @@
+%h1 Listing billings
+
+%table
+  %thead
+    %tr
+      %th Accounted at
+      %th Client
+      %th Value
+      %th
+      %th
+      %th
+
+  %tbody
+    - @billings.each do |billing|
+      %tr
+        %td= billing.accounted_at
+        %td= billing.client
+        %td= billing.value
+        %td= link_to 'Show', billing
+        %td= link_to 'Edit', edit_billing_path(billing)
+        %td= link_to 'Destroy', billing, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Billing', new_billing_path
