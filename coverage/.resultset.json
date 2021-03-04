@@ -782,7 +782,7 @@
           1,
           null,
           null,
-          1,
+          5,
           null,
           null,
           1,
@@ -1228,8 +1228,19 @@
           null
         ]
       },
+      "/Users/rannyeri/Projects/billing_project/spec/factories/payment_methods.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
       "/Users/rannyeri/Projects/billing_project/config/routes.rb": {
         "lines": [
+          1,
           1,
           1,
           null,
@@ -1258,6 +1269,12 @@
           null
         ]
       },
+      "/Users/rannyeri/Projects/billing_project/app/helpers/payment_methods_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
       "/Users/rannyeri/Projects/billing_project/spec/support/database_cleaner.rb": {
         "lines": [
           1,
@@ -1266,15 +1283,15 @@
           null,
           null,
           1,
-          2,
+          4,
           null,
           null,
           1,
-          2,
+          4,
           null,
           null,
           1,
-          2,
+          4,
           null,
           null
         ]
@@ -1295,8 +1312,165 @@
           null,
           null
         ]
+      },
+      "/Users/rannyeri/Projects/billing_project/spec/views/payment_methods/index.html.haml_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/rannyeri/Projects/billing_project/spec/views/payment_methods/new.html.haml_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/rannyeri/Projects/billing_project/spec/views/payment_methods/show.html.haml_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/rannyeri/Projects/billing_project/app/controllers/payment_methods_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null
+        ]
+      },
+      "/Users/rannyeri/Projects/billing_project/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/rannyeri/Projects/billing_project/app/models/payment_method.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
       }
     },
-    "timestamp": 1614829041
+    "timestamp": 1614835420
   }
 }
