@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @client.name
+%p
+  %b Last billed at:
+  = @client.last_billed_at
+%p
+  %b Billing date:
+  = @client.billing_date
+
+= link_to 'Edit', edit_client_path(@client)
+\|
+= link_to 'Back', clients_path

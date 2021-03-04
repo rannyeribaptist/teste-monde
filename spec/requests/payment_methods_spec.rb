@@ -16,11 +16,11 @@ RSpec.describe "/payment_methods", type: :request do
   # PaymentMethod. As you add validations to PaymentMethod, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    {name: 'Boleto', message: 'Boleto gerado com sucesso'}
+    { name: 'Boleto', message: 'Boleto gerado com sucesso' }
   }
 
   let(:invalid_attributes) {
-    {name: nil, message: nil}
+    { name: nil, message: nil }
   }
 
   describe "GET /index" do
