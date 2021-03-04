@@ -11,7 +11,7 @@ Seja bem-vindo a mais uma etapa do processo de seleção da Monde. Neste etapa v
 # Requisitos
 - CRUD de clientes onde posso selecionar a forma de pagamento de cada cliente. As formas de pagamento devem ser carregadas dinamicamente sem que o CRUD conheça as formas disponíveis.
 - O processo de faturamento não pode "conhecer" os métodos de pagamento disponíveis, ele deve tratar todos de forma genérica.
-- Esse é o requisito mais importante do projeto: Para adicionar ou remover novas formas de pagamento, não é permitido modificar nenhum código do app, apenas remover ou adicionar novas classes. 
+- Esse é o requisito mais importante do projeto: Para adicionar ou remover novas formas de pagamento, não é permitido modificar nenhum código do app, apenas remover ou adicionar novas classes.
 - O processo de faturamento deverá faturar diariamente os clientes com vencimento no dia. Para este exemplo basta gerar um log ou algum relatório informando quais clientes foram faturados e qual a forma de pagamento de cada um.
 - O processo de faturamento deverá ter garantias de que o mesmo cliente não será faturado mais de uma vez dentro do mesmo mês e em caso de erros (sistema de pagamento indisponível por exemplo), deverá logar o erro ou gerar um relatório e fazer novas tentativas automaticamente.
 

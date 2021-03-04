@@ -1,0 +1,4 @@
+FB_TRACE=1
+--color
+--format progress
+--require spec_helper
