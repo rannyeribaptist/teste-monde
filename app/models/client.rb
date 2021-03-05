@@ -61,6 +61,6 @@ class Client < ApplicationRecord
   end
 
   def ready_to_bill?
-    self.billing_day <= Date.today.day
+    self.billing_day <= Date.today.day && self.client_payment_method.present?
   end
 end
