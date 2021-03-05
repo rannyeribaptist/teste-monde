@@ -59,4 +59,8 @@ class Client < ApplicationRecord
   def billed?
     self.last_billed_at&.month.eql? Date.today.month
   end
+
+  def ready_to_bill?
+    self.billing_day <= Date.today.day
+  end
 end

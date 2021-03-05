@@ -22,16 +22,15 @@ class BillingsController < ApplicationController
 
   # POST /billings or /billings.json
   def create
-    @billing = Billing.new(billing_params)
+    client = Client.find_by_id(billing_params[:client_id].to_i)
+    if !client.billed? && client.ready_to_bill?
+      @billing = BillingService.new(client).make_bill
+    else
+      @billing = "Falha ao processar o pagamento. O cliente #{client.name} já foi cobrado ou não está dentro da data prevista para pagamento este mês"
+    end
 
     respond_to do |format|
-      if @billing.save
-        format.html { redirect_to @billing, notice: "Billing was successfully created." }
-        format.json { render :show, status: :created, location: @billing }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @billing.errors, status: :unprocessable_entity }
-      end
+      format.html { redirect_to billings_path, notice: @billing }
     end
   end
 
