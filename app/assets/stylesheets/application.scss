@@ -1,0 +1,51 @@
+// Color scheme: github.com/ionic-team/ionic-framework/issues/18713
+// Dark theme is life 😍👨‍💻
+$primary: #3482f6;
+$secondary: #7747f5;
+$success: #00dc72;
+$info: #00d2e5;
+$warning: #ffcd46;
+$danger: #f83b44;
+$light: #f4f5f8;
+$dark: #000;
+
+@import "bootstrap";
+
+// Font family
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+  background-color: #222428;
+  color: $light;
+  font-family: 'Rubik', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.table {
+  color: $light;
+}
+
+.content {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  max-width: 700px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.login {
+  &__content {
+    min-width: 300px;
+  }
+}
+
+.navbar {
+  background-color: $secondary;
+
+  img { max-width: 50px }
+  a { color: $light }
+}

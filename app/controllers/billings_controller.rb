@@ -1,5 +1,6 @@
 class BillingsController < ApplicationController
   before_action :set_billing, only: %i[ show edit update destroy ]
+  before_action :authenticate_admin!
 
   # GET /billings or /billings.json
   def index

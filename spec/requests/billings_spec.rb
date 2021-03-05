@@ -23,6 +23,11 @@ RSpec.describe "/billings", type: :request do
     { client_id: create(:client).id }
   }
 
+  before(:each) do
+    admin = create(:admin)
+    sign_in admin
+  end
+
   describe "GET /index" do
     it "renders a successful response" do
       Billing.create! valid_attributes

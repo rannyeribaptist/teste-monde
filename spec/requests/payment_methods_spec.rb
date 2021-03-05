@@ -23,6 +23,11 @@ RSpec.describe "/payment_methods", type: :request do
     { name: nil, message: nil }
   }
 
+  before(:each) do
+    admin = create(:admin)
+    sign_in admin
+  end
+
   describe "GET /index" do
     it "renders a successful response" do
       PaymentMethod.create! valid_attributes

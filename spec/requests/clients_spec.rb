@@ -23,6 +23,11 @@ RSpec.describe "/clients", type: :request do
     { name: 'Fulano' }
   }
 
+  before(:each) do
+    admin = create(:admin)
+    sign_in admin
+  end
+
   describe "GET /index" do
     it "renders a successful response" do
       Client.create! valid_attributes

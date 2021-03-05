@@ -1,11 +1,11 @@
-%h1 Listing clients
+%h1 Clientes
 
-%table
+%table.table
   %thead
     %tr
-      %th Name
-      %th Last billed at
-      %th Billing day
+      %th Nome
+      %th Cobrado em
+      %th Dia de cobrança
       %th
       %th
       %th
@@ -14,12 +14,12 @@
     - @clients.each do |client|
       %tr
         %td= client.name
-        %td= client.last_billed_at
+        %td= format_date(client.last_billed_at)
         %td= client.billing_day
-        %td= link_to 'Show', client
-        %td= link_to 'Edit', edit_client_path(client)
-        %td= link_to 'Destroy', client, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to 'Ver', client, class: 'text-success'
+        %td= link_to 'Editar', edit_client_path(client), class: 'text-info'
+        %td= link_to 'Excluir', client, method: :delete, data: { confirm: 'Tem certeza?' }, class: 'text-danger'
 
 %br
 
-= link_to 'New Client', new_client_path
+= link_to 'Novo Cliente', new_client_path, class: 'btn btn-secondary'

@@ -1,10 +1,10 @@
-%h1 Listing payment_methods
+%h1 Métodos de pagamento
 
-%table
+%table.table
   %thead
     %tr
-      %th Name
-      %th Message
+      %th Nome
+      %th Mensagem de cobrança
       %th
       %th
       %th
@@ -14,10 +14,10 @@
       %tr
         %td= payment_method.name
         %td= payment_method.message
-        %td= link_to 'Show', payment_method
-        %td= link_to 'Edit', edit_payment_method_path(payment_method)
-        %td= link_to 'Destroy', payment_method, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to 'Ver', payment_method, class: 'text-success'
+        %td= link_to 'Editar', edit_payment_method_path(payment_method), class: 'text-info'
+        %td= link_to 'Excluir', payment_method, method: :delete, data: { confirm: 'Tem certeza?' }, class: 'text-danger'
 
 %br
 
-= link_to 'New Payment method', new_payment_method_path
+= link_to 'Novo método de pagamento', new_payment_method_path, class: 'btn btn-secondary'

@@ -23,7 +23,7 @@ class Admin < ApplicationRecord
 
   ##
   # Behaviours
-  devise :database_authenticatable, :recoverable, :validatable
+  devise :database_authenticatable, :validatable
 
   ##
   # Relationships

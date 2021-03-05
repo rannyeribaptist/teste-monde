@@ -1,11 +1,11 @@
-%h1 Listing billings
+%h1 Todas as cobranças
 
-%table
+%table.table
   %thead
     %tr
-      %th Accounted at
-      %th Client
-      %th Payment method
+      %th Data da cobrança
+      %th Cliente
+      %th Forma de pagamento
       %th
       %th
       %th
@@ -13,13 +13,13 @@
   %tbody
     - @billings.each do |billing|
       %tr
-        %td= billing.accounted_at
-        %td= billing.client
+        %td= format_date(billing.accounted_at)
+        %td= link_to billing.client.name.capitalize, client_path(billing.client)
         %td= billing.payment_method.name
-        %td= link_to 'Show', billing
-        %td= link_to 'Edit', edit_billing_path(billing)
-        %td= link_to 'Destroy', billing, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to 'Ver', billing, class: 'text-success'
+        %td= link_to 'Editar', edit_billing_path(billing), class: 'text-info'
+        %td= link_to 'Excluir', billing, method: :delete, data: { confirm: 'Tem certeza?' }, class: 'text-danger'
 
 %br
 
-= link_to 'New Billing', new_billing_path
+= link_to 'Fazer cobrança', new_billing_path, class: 'btn btn-secondary'
