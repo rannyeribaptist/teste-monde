@@ -1,15 +1,19 @@
 %p#notice= notice
 
-%p
-  %b Accounted at:
-  = @billing.accounted_at
-%p
-  %b Client:
-  = @billing.client
-%p
-  %b Payment Method:
-  = @billing.payment_method
+.card{:style => "width: 400px; max-width: 100%"}
+  .card-body
+    %h5.card-title Cobrança
+    %hr
 
-= link_to 'Edit', edit_billing_path(@billing)
-\|
-= link_to 'Back', billings_path
+    %text Cobrado em:
+    %strong= format_date(@billing.accounted_at)
+    %br
+    %text Cliente:
+    %strong= link_to @billing.client.name.capitalize, client_path(@billing.client)
+    %br
+    %text Forma de pagamento:
+    %strong= @billing.payment_method.name
+    %br
+  .card-footer
+    = link_to 'Voltar', billings_path, class: 'btn btn-light'
+    = link_to 'Editar', edit_billing_path(@billing), class: 'btn btn-primary float-right'

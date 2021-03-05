@@ -1,15 +1,24 @@
 %p#notice= notice
 
-%p
-  %b Name:
-  = @client.name
-%p
-  %b Last billed at:
-  = @client.last_billed_at
-%p
-  %b Billing day:
-  = @client.billing_day
+.card{:style => "width: 400px; max-width: 100%"}
+  .card-body
+    %h5.card-title Cliente
+    %hr
 
-= link_to 'Edit', edit_client_path(@client)
-\|
-= link_to 'Back', clients_path
+    %text Nome:
+    %strong= @client.name
+    %br
+    %text Cobrança mais recente:
+    %strong= format_date(@client.last_billed_at)
+    %br
+    %text Dia de cobrança:
+    %strong= @client.billing_day
+    %br
+    %text Forma de pagamento:
+    %strong= @client.payment_method_name
+    %br
+    %br    	
+    = link_to 'Forma de pagamento', edit_client_path(@client), class: 'btn btn-secondary'
+  .card-footer
+    = link_to 'Voltar', clients_path, class: 'btn btn-light'
+    = link_to 'Editar', edit_client_path(@client), class: 'btn btn-primary float-right'

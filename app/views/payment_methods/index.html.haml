@@ -1,22 +1,23 @@
 %h1 Métodos de pagamento
 
-%table.table
-  %thead
-    %tr
-      %th Nome
-      %th Mensagem de cobrança
-      %th
-      %th
-      %th
-
-  %tbody
-    - @payment_methods.each do |payment_method|
+.table-responsive
+  %table.table.align-middle
+    %thead
       %tr
-        %td= payment_method.name
-        %td= payment_method.message
-        %td= link_to 'Ver', payment_method, class: 'text-success'
-        %td= link_to 'Editar', edit_payment_method_path(payment_method), class: 'text-info'
-        %td= link_to 'Excluir', payment_method, method: :delete, data: { confirm: 'Tem certeza?' }, class: 'text-danger'
+        %th Nome
+        %th Mensagem de cobrança
+        %th
+        %th
+        %th
+
+    %tbody
+      - @payment_methods.each do |payment_method|
+        %tr
+          %td= payment_method.name
+          %td= payment_method.message
+          %td= link_to 'Ver', payment_method, class: 'text-success'
+          %td= link_to 'Editar', edit_payment_method_path(payment_method), class: 'text-info'
+          %td= link_to 'Excluir', payment_method, method: :delete, data: { confirm: 'Tem certeza?' }, class: 'text-danger'
 
 %br
 

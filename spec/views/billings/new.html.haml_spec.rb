@@ -14,7 +14,6 @@ RSpec.describe "billings/new", type: :view do
     assert_select "form[action=?][method=?]", billings_path, "post" do
 
       assert_select "select[name=?]", "billing[client_id]"
-      assert_select "select[name=?]", "billing[payment_method_id]"
     end
   end
 end

@@ -1,12 +1,15 @@
 %p#notice= notice
 
-%p
-  %b Name:
-  = @payment_method.name
-%p
-  %b Message:
-  = @payment_method.message
+.card{:style => "width: 400px; max-width: 100%"}
+  .card-body
+    %h5.card-title Método de pagamento
+    %hr
 
-= link_to 'Edit', edit_payment_method_path(@payment_method)
-\|
-= link_to 'Back', payment_methods_path
+    %text Nome:
+    %strong= @payment_method.name
+    %br
+    %text Mensagem de feedback:
+    %strong= @payment_method.message
+  .card-footer
+    = link_to 'Voltar', payment_methods_path, class: 'btn btn-light'
+    = link_to 'Editar', edit_payment_method_path(@payment_method), class: 'btn btn-primary float-right'

@@ -13,8 +13,7 @@ RSpec.describe "billings/edit", type: :view do
 
     assert_select "form[action=?][method=?]", billing_path(@billing), "post" do
 
-      assert_select "select[name=?]", "billing[client_id]"
-      assert_select "select[name=?]", "billing[payment_method_id]"
+      assert_select "select[name=?]", "billing[client_id]"      
     end
   end
 end

@@ -10,8 +10,8 @@ RSpec.describe "billings/show", type: :view do
 
   it "renders attributes in <p>" do
     render
-    expect(rendered).to match(/Accounted at/)
-    expect(rendered).to match(/Client/)
-    expect(rendered).to match(/Payment Method/)
+    expect(rendered).to match(/Cobrado em/)
+    expect(rendered).to match(/Cliente/)
+    expect(rendered).to match(/Forma de pagamento/)
   end
 end

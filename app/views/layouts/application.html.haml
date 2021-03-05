@@ -6,15 +6,16 @@
     %meta{:content => "width=device-width,initial-scale=1", :name => "viewport"}/
     = csrf_meta_tags
     = csp_meta_tag
-    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
   %body
     %nav.navbar.navbar-expand-lg
       .container-fluid
-        %img{src: 'https://pa1.narvii.com/6507/3b12357d80b8425c198926c27bf59b35d0169291_hq.gif', alt: 'Don\'t mind me, I\'m just passing by...'}
+        %a{:href => "/"}
+          %img{src: 'https://pa1.narvii.com/6507/3b12357d80b8425c198926c27bf59b35d0169291_hq.gif', alt: 'Don\'t mind me, I\'m just passing by...'}
         %button.navbar-toggler{"aria-controls" => "navbarNavAltMarkup", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-bs-target" => "#navbarNavAltMarkup", "data-bs-toggle" => "collapse", :type => "button"}
-          %span.navbar-toggler-icon
-        #navbarNavAltMarkup.collapse.navbar-collapse
+          %img{src: 'https://icongr.am/clarity/bars.svg?size=30&color=ffffff'}
+        #navbarNavAltMarkup.collapse.navbar-collapse{style: "justify-content: right"}
           .navbar-nav
             = link_to "Cobranças", billings_path, class: 'nav-link'
             -# = link_to "Cobranças do dia", day_billings_path, class: 'nav-link'
