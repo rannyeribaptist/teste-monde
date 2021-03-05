@@ -1,0 +1,17 @@
+%h1 Método de pagamento do cliente
+
+%hr
+
+%p
+  Cliente:
+  = @client.name.capitalize
+
+%br
+%br
+
+= simple_form_for @payment_method, url: :update_client_payment do |f|
+  = f.association :payment_method, label: 'Método de pagamento'
+
+  %br
+
+  = f.submit "Salvar", class: 'btn btn-success'

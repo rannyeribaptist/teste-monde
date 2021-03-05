@@ -1,5 +1,6 @@
 class ClientsController < ApplicationController
-  before_action :set_client, only: %i[ show edit update destroy ]
+  before_action :set_client, only: %i[ show edit update destroy edit_payment_method update_payment_method ]
+  before_action :set_payment_method, only: %i[ edit_payment_method update_payment_method ]
   before_action :authenticate_admin!
 
   # GET /clients or /clients.json
@@ -57,14 +58,36 @@ class ClientsController < ApplicationController
     end
   end
 
+  def edit_payment_method
+  end
+
+  def update_payment_method
+    @payment_method.payment_method_id = params[:client_payment_method][:payment_method_id]
+
+    respond_to do |format|
+      if @payment_method.save
+        format.html { redirect_to @client, notice: "Client was successfully updated." }
+        format.json { render :show, status: :created, location: @client }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: @client.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_client
       @client = Client.find(params[:id])
     end
 
+    def set_payment_method
+      @payment_method = @client.client_payment_method
+      @payment_method ||= ClientPaymentMethod.new(client: @client)
+    end
+
     # Only allow a list of trusted parameters through.
     def client_params
-      params.require(:client).permit(:name, :last_billed_at, :billing_day)
+      params.require(:client).permit(:name, :last_billed_at, :billing_day, :client_payment_method)
     end
 end
