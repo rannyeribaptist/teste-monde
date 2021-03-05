@@ -10,5 +10,7 @@ Rails.application.routes.draw do
   post '/clients/:id/payment_method', to: 'clients#update_payment_method', as: :update_client_payment
   patch '/clients/:id/payment_method', to: 'clients#update_payment_method'
 
+  get 'billings_of_the_day', to: 'billings#billings_of_the_day', as: :billings_of_the_day
+
   root to: 'billings#index'
 end

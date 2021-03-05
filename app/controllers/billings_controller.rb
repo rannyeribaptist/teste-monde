@@ -7,6 +7,10 @@ class BillingsController < ApplicationController
     @billings = Billing.all
   end
 
+  def billings_of_the_day
+    @billings = Billing.today
+  end
+
   # GET /billings/1 or /billings/1.json
   def show
   end
