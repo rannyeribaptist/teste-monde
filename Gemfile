@@ -35,6 +35,8 @@ gem 'simple_form'
 gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
 # Devise is a flexible authentication solution for Rails based on Warden. It:
 gem 'devise'
+# Whenever is a Ruby gem that provides a clear syntax for writing and deploying cron jobs.
+gem 'whenever', require: false
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false

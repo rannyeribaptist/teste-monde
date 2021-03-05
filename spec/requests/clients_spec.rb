@@ -16,7 +16,7 @@ RSpec.describe "/clients", type: :request do
   # Client. As you add validations to Client, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    { name: 'Fulano', billing_date: Date.today }
+    { name: 'Fulano', billing_day: Date.today.day }
   }
 
   let(:invalid_attributes) {
@@ -85,7 +85,7 @@ RSpec.describe "/clients", type: :request do
   describe "PATCH /update" do
     context "with valid parameters" do
       let(:new_attributes) {
-        { name: 'Fulano', billing_date: Date.today }
+        { name: 'Fulano', billing_day: Date.today.day }
       }
 
       it "updates the requested client" do

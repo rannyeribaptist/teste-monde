@@ -4,7 +4,7 @@ RSpec.describe "clients/edit", type: :view do
   before(:each) do
     @client = assign(:client, Client.create!(
       name: "MyString",
-      billing_date: Date.today
+      billing_day: Date.today.day
     ))
   end
 

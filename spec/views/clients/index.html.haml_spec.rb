@@ -5,11 +5,11 @@ RSpec.describe "clients/index", type: :view do
     assign(:clients, [
       Client.create!(
         name: "Name",
-        billing_date: Date.today
+        billing_day: Date.today.day
       ),
       Client.create!(
         name: "Name",
-        billing_date: Date.today
+        billing_day: Date.today.day
       )
     ])
   end

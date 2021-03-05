@@ -5,7 +5,7 @@
     %tr
       %th Name
       %th Last billed at
-      %th Billing date
+      %th Billing day
       %th
       %th
       %th
@@ -15,7 +15,7 @@
       %tr
         %td= client.name
         %td= client.last_billed_at
-        %td= client.billing_date
+        %td= client.billing_day
         %td= link_to 'Show', client
         %td= link_to 'Edit', edit_client_path(client)
         %td= link_to 'Destroy', client, method: :delete, data: { confirm: 'Are you sure?' }

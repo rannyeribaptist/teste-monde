@@ -5,7 +5,7 @@
     %tr
       %th Accounted at
       %th Client
-      %th Value
+      %th Payment method
       %th
       %th
       %th
@@ -15,7 +15,7 @@
       %tr
         %td= billing.accounted_at
         %td= billing.client
-        %td= billing.value
+        %td= billing.payment_method.name
         %td= link_to 'Show', billing
         %td= link_to 'Edit', edit_billing_path(billing)
         %td= link_to 'Destroy', billing, method: :delete, data: { confirm: 'Are you sure?' }

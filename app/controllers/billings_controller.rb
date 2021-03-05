@@ -64,6 +64,6 @@ class BillingsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def billing_params
-      params.require(:billing).permit(:accounted_at, :client_id, :value)
+      params.require(:billing).permit(:accounted_at, :client_id, :payment_method_id)
     end
 end

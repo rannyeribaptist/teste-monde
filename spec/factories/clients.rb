@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :client do
     name { Faker::Name.name }
-    billing_date { Date.today }
+    billing_day { Date.today.day }
 
     trait :billed do
       last_billed_at { Date.today - 1.month }

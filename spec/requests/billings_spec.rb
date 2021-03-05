@@ -16,11 +16,11 @@ RSpec.describe "/billings", type: :request do
   # Billing. As you add validations to Billing, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    { client_id: create(:client).id, payment_method_id: create(:payment_method, :credit).id }
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    { client_id: create(:client).id }
   }
 
   describe "GET /index" do
@@ -77,7 +77,7 @@ RSpec.describe "/billings", type: :request do
 
       it "renders a successful response (i.e. to display the 'new' template)" do
         post billings_url, params: { billing: invalid_attributes }
-        expect(response).to be_successful
+        expect(response).not_to be_successful
       end
     end
   end
@@ -85,14 +85,14 @@ RSpec.describe "/billings", type: :request do
   describe "PATCH /update" do
     context "with valid parameters" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        { client: build(:client), payment_method: build(:payment_method, :credit) }
       }
 
       it "updates the requested billing" do
         billing = Billing.create! valid_attributes
         patch billing_url(billing), params: { billing: new_attributes }
         billing.reload
-        skip("Add assertions for updated state")
+        expect(response).to redirect_to(billing_url(billing))
       end
 
       it "redirects to the billing" do
@@ -107,7 +107,7 @@ RSpec.describe "/billings", type: :request do
       it "renders a successful response (i.e. to display the 'edit' template)" do
         billing = Billing.create! valid_attributes
         patch billing_url(billing), params: { billing: invalid_attributes }
-        expect(response).to be_successful
+        expect(response).not_to be_successful
       end
     end
   end

@@ -28,7 +28,6 @@ ActiveRecord::Schema.define(version: 2021_03_04_180148) do
     t.date "accounted_at"
     t.integer "client_id", null: false
     t.integer "payment_method_id", null: false
-    t.decimal "value"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["client_id"], name: "index_billings_on_client_id"
@@ -47,7 +46,7 @@ ActiveRecord::Schema.define(version: 2021_03_04_180148) do
   create_table "clients", force: :cascade do |t|
     t.string "name"
     t.date "last_billed_at"
-    t.date "billing_date"
+    t.integer "billing_day"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

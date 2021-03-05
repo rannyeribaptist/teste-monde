@@ -2,12 +2,12 @@ require 'rails_helper'
 
 RSpec.describe Client, type: :model do
   it { should validate_presence_of :name }
-  it { should validate_presence_of :billing_date }
+  it { should validate_presence_of :billing_day }
 
   describe "with client payment method" do
     subject { create(:client) }
 
-    before(:each) do
+    before do
       create(:payment_method, :billet)
       ClientPaymentMethod.create(client: subject, payment_method: PaymentMethod.first)
     end

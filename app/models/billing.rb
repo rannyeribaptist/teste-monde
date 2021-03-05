@@ -2,7 +2,9 @@ class Billing < ApplicationRecord
   belongs_to :client
   belongs_to :payment_method
 
-  validates_presence_of :accounted_at, :value
+  after_create :set_accounted_at
 
-  validates :value, numericality: { greater_than: 0 }
+  def set_accounted_at
+    self.update(accounted_at: Date.today)
+  end
 end

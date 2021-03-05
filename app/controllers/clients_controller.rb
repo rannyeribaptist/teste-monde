@@ -64,6 +64,6 @@ class ClientsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def client_params
-      params.require(:client).permit(:name, :last_billed_at, :billing_date)
+      params.require(:client).permit(:name, :last_billed_at, :billing_day)
     end
 end

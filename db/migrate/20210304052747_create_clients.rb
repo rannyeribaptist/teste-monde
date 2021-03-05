@@ -3,7 +3,7 @@ class CreateClients < ActiveRecord::Migration[6.1]
     create_table :clients do |t|
       t.string :name
       t.date :last_billed_at
-      t.date :billing_date
+      t.integer :billing_day
 
       t.timestamps
     end
